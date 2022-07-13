@@ -12,6 +12,9 @@ It's time to practice routing! Use the checklist below to add routes to your pro
 
 ***Bonus*** result:
 
+![image](https://user-images.githubusercontent.com/88631496/178811197-bd020d97-b2ae-4f71-95a0-4a729e36a981.png)
+
+
 
 Create a new project with a single app
 
