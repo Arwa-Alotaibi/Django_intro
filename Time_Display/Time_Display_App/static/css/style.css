@@ -1,0 +1,21 @@
+h1{
+    margin: auto;
+    color: rgb(120, 147, 149);
+    text-align: center;           
+    border: solid black ;
+    width: 30%;
+    padding: 10px;
+
+    }
+    .time{
+        margin: auto;
+        text-align: center;
+        border: solid black ;
+        width: 40%;
+        height: 100%;
+        font-size:large;
+        padding: 10px;
+
+
+    }
+
