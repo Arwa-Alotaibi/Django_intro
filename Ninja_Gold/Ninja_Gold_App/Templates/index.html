@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ninja Gold </title>
+        {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css'%}">  
+
+    </head>
+
+    <body>
+        <p>your gold: <span class="your-gold">{{ request.session.gold}}</span></p>
+        <div class="forms">
+        <form action="/porcess_money" method="POST">
+            <h3>Farm </h3>
+            <p>Earns 10-20 golds</p>
+            {% csrf_token %}
+            <input type="hidden" name="building" value="Farm">
+            <button>Find Gold</button>
+        </form>
+        <form action="/porcess_money" method="POST">
+            <h3>Cave</h3>
+            <p>Earns 10-20 golds</p>
+            {% csrf_token %}
+
+            <input type="hidden" name="building" value="Cave">
+            <button>Find Gold</button>
+        </form>
+        <form action="/porcess_money" method="POST">
+            <h3>House</h3>
+            <p>Earns 10-20 golds</p>
+            {% csrf_token %}
+
+            <input type="hidden" name="building" value="House">
+            <button>Find Gold</button>
+        </form>
+
+        <form action="/porcess_money" method="POST">
+            <h3>Quest</h3>
+            <p>Earns/takes 0-50 golds</p>
+            {% csrf_token %}
+
+            <input type="hidden" name="building" value="Quest">
+            <button>Find Gold</button>
+        </form>
+    </div>
+
+    {% for activity in  request.session.activities %}
+    {% if activity.value > 0 %}
+    <p style="color: green;">you entered a {{activity.activityName}} and earned {{activity.value}} gold ({{activity.date}})</p>
+
+    {%else%}
+    <p style="color: red;">you entered a {{activity.activityName}} and earned {{activity.value}} gold ({{activity.date}})</p>
+
+{% endif %}
+{% endfor %}
+
+    </body>
+</html>
